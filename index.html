@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
+</head>
 
-  <body>
-    <h1>Hello Plunker!</h1>
-    <button class="planet2d">
-    </button>
-     
-  </body>
+<body>
+    <div id="up">Исходное положение:<br><br>
+        <input id="vvod" type="text" />
+        <button id="vybod">Ok</button>
+    </div>
+    <div id="result">
+        Все возможные ходы: <br>
+        <div id="divp">
+        </div>
+        <button id="resultok">Ok</button>
+    </div>
+    <script>
+        vybod.onclick = () => {
+            if (vvod.value.length === 2) {
+
+
+
+                turn(vvod.value[0], +vvod.value[1]);
+
+                divp.innerHTML = arr1.join(' ') + "<br>";
+
+                vybod.style.display = "none";
+                result.style.display = "block";
+            } else alert("не верно!");
+
+            resultok.onclick = () => {
+                vvod.value = "";
+                result.style.display = "none";
+                vybod.style.display = "";
+            };
+
+
+
+        };
+    </script>
+</body>
 
 </html>
